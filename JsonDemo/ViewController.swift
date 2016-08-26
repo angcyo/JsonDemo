@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
+		testStringNSString()
+
 		let bean = JsonBean()
 		print("\(isVaildJson(bean))")
 
@@ -59,6 +61,14 @@ extension ViewController {
 	// mark: 判断对象是不是有效的Json对象.(是否能转换成Json字符串)
 	func isVaildJson(obj: AnyObject) -> Bool {
 		return NSJSONSerialization.isValidJSONObject(obj)
+	}
+
+	func testStringNSString() {
+		let nsString = NSString(string: "This is a string")
+		let string = String(nsString)
+
+		print("\(nsString)")
+		print("\(string)")
 	}
 }
 
